@@ -1,0 +1,34 @@
+/* MenuBar.css */
+.menubar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 90px; /* Adjust width as needed */
+  background-color: black;
+  padding: 30px 150px 30px 15px; /* Increase right padding to 25px */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  border-right: 2px solid rgba(255, 255, 255, 0.2); /* Increase width of the faint line */
+}
+
+.menu-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: white;
+}
+
+.menu-link:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.menubar button {
+  margin-bottom: 10px;
+}
+
+.menubar svg {
+  fill: white;
+}

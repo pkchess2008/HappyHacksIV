@@ -1,0 +1,29 @@
+/* components/PostCreator.css */
+
+.post-creator {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .input-field {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+  
+  .preview {
+    text-align: center;
+    margin-bottom: 15px;
+  }
+  
+  .preview img {
+    max-width: 100%;
+    max-height: 300px;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+  }
+  
