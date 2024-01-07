@@ -27,7 +27,8 @@ export default function FriendsManager() {
         //     }),
         //     method: "POST"
         // })
-        setSuggested(prev => [...prev, val])
+        setFriends(prev => [...prev, val])
+        setSuggested(prev => prev.filter((value) => value.id !== val.id)
     }
 
     function unfriend(val: Friends) {
