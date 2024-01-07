@@ -1,5 +1,4 @@
-import { ClerkProvider } from '@clerk/nextjs';
-import { useUser } from '@clerk/nextjs';
+import { ClerkProvider, useUser} from '@clerk/nextjs';
 import { useState, useEffect } from 'react';
 
 
@@ -19,7 +18,6 @@ export default function FriendsManager() {
         { name: "Joker", id: "3", image: "joker.png", email: "joker@hood.com"},
         { name: "Curry", id: "4", image: "curry.png", email: "steph@man.com"}
     ])
-    const user = useUser();
 
     function friend(val: Friends) {
         // fetch(`/friend_user`,{
@@ -43,16 +41,16 @@ export default function FriendsManager() {
         setFriends(prev => prev.filter((value) => value.id !== val.id))
     }
 
-    useEffect(() => {
-        if (user.user?.id) {
-            fetch(`/get_friends?user_id=${user.user?.id}`)
-                .then((res) => res.json())
-                .then((data) => {
-                    setFriends(data.friends)
-                    setSuggested(data.suggested)
-                })
-        }
-    }, [user])
+    // useEffect(() => {
+    //     if (user.user?.id) {
+    //         fetch(`/get_friends?user_id=${user.user?.id}`)
+    //             .then((res) => res.json())
+    //             .then((data) => {
+    //                 setFriends(data.friends)
+    //                 setSuggested(data.suggested)
+    //             })
+    //     }
+    // }, [user])
 
     return (
         <ClerkProvider>
