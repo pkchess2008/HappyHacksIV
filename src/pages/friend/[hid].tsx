@@ -10,7 +10,7 @@ export default function Friends() {
         id: string;
     }
 
-    const uid = "1"
+    const uid = "2"
     const params = useParams()
     const router = useRouter();
     const [msg, setMsg] = useState<string>("")
