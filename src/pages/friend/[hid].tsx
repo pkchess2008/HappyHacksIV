@@ -27,12 +27,7 @@ export default function Friends() {
         id: "2"
     }])
     
-    // useEffect(() => {
-    //     fetch(`/get_imsg?uid_o=${}&uid_t=${}`)
-    //         .then(data => data.json())
-    //         .then(data => setMsgs(data.msg))
-    // }, [])
-
+    
     function handleSubmit() {
         // fetch(`/send_imsg`, {
         //     method: "POST",
