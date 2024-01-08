@@ -25,8 +25,15 @@ config = {
 firebase = pyrebase.initialize_app(config)
 auth = firebase.auth()
 
-email=""
-# print user
+@app.route('/')
+def logout():
+    pass
+
+# email="stephenmaina2995@gmail.com"
+# password='1234567'
+
+# user = auth.create_user_with_email_and_password(email, password)
+# print (user)
 
 
 
