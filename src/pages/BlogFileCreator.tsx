@@ -1,9 +1,16 @@
 import React, { useState } from 'react';
 import './BlogFileCreator.css';
 
+interface Blog {
+  id: number;
+  title: string;
+  content: string;
+}
+
 const BlogFileCreator: React.FC = () => {
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
+  const [blogs, setBlogs] = useState<Blog[]>([]);  // State to store blogs
 
   const handleTitleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setTitle(e.target.value);
@@ -16,7 +23,20 @@ const BlogFileCreator: React.FC = () => {
   const handleSubmit = () => {
     console.log('Title:', title);
     console.log('Content:', content);
-    // Handle submission logic here
+
+    // Create a new blog object
+    const newBlog: Blog = {
+      id: blogs.length + 1,  // Unique ID for each blog
+      title,
+      content,
+    };
+
+    // Update the blogs state with the new blog
+    setBlogs([...blogs, newBlog]);
+
+    // Reset form after submission
+    setTitle('');
+    setContent('');
   };
 
   return (
@@ -40,6 +60,19 @@ const BlogFileCreator: React.FC = () => {
       <button onClick={handleSubmit} className="submit-button">
         Create
       </button>
+
+      {/* Render the list of blogs */}
+      <div className="blogs-list">
+        <h3>Blogs</h3>
+        <ul>
+          {blogs.map(blog => (
+            <li key={blog.id}>
+              <strong>{blog.title}</strong>
+              <p>{blog.content}</p>
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 };
