@@ -17,14 +17,14 @@ const MenuBar = () => {
   return (
     <nav className="menubar">
       <Stack direction="column" spacing={2}>
-        <Link href="/friends-manager" className="menu-link">
+        <Link href="/friends" className="menu-link">
           <IconButton color="inherit">
             <PeopleAltIcon />
           </IconButton>
           <Typography variant="body2">Friends</Typography>
         </Link>
 
-        <Link href="/messaging" className="menu-link">
+        <Link href="/messages" className="menu-link">
           <IconButton color="inherit">
             <ChatIcon />
           </IconButton>

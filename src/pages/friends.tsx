@@ -27,9 +27,10 @@ export default function FriendsManager() {
         //     }),
         //     method: "POST"
         // })
-        setFriends(prev => [...prev, val])
-        setSuggested(prev => prev.filter((value) => value.id !== val.id)
+        setFriends(prev => [...prev, val]);
+        setSuggested(prev => prev.filter((value) => value.id !== val.id)); // Added missing parenthesis
     }
+
 
     function unfriend(val: Friends) {
         // fetch(`/unfriend_user`,{
