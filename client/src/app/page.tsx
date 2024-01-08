@@ -7,6 +7,8 @@ export default function Home() {
 
   const [message, setMessage]=useState("message")
 
+  
+
   useEffect(() => {
     fetch("http://127.0.0.1:8080/api/home")
     .then(res => res.json())
