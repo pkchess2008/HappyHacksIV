@@ -1,6 +1,7 @@
 // components/PostCreator.tsx
 
 import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import './post-creator.css'; // Import your CSS file for styling
@@ -8,6 +9,7 @@ import './post-creator.css'; // Import your CSS file for styling
 const PostCreator: React.FC = () => {
   const [imageURL, setImageURL] = useState('');
   const [caption, setCaption] = useState('');
+  const history = useHistory(); 
 
   const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setImageURL(e.target.value);
@@ -36,6 +38,8 @@ const PostCreator: React.FC = () => {
     // Perform actions with imageURL and caption, e.g., submit to backend
     console.log('Image URL:', imageURL);
     console.log('Caption:', caption);
+    // Redirect to the main page after submission 
+    history.push('/'); 
     // Reset form after submission
     setImageURL('');
     setCaption('');
